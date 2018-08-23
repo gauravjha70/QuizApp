@@ -39,6 +39,7 @@ public class LoginPage extends AppCompatActivity {
                 String uname = sp.getString("Username", "");
                 intent.putExtra("Username", uname);
                 startActivity(intent);
+                finish();
             }
             else
             {

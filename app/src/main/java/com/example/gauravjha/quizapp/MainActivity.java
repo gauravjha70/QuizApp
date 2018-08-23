@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements QuizFragment.Fina
 
     Button sportButton,scienceButton,gkButton,highscore,profile;
     int score;
+    Boolean pro_frag,quiz_frag,over_frag,high_frag;
     UserInfo thisUser;
     QuizFragment quizFragment;
     UsersDatabaseHelper usersDatabaseHelper;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements QuizFragment.Fina
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        pro_frag = quiz_frag = over_frag = high_frag = false;
 
         username = getIntent().getStringExtra("Username");
         thisUser = new UserInfo();
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements QuizFragment.Fina
                 quizFragment.setArguments(bundle);
                 RelativeLayout quizContainer = findViewById(R.id.quiz_container);
                 quizContainer.setClickable(true);
-
+                quiz_frag = true;
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.add(R.id.quiz_container,quizFragment);
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements QuizFragment.Fina
                 RelativeLayout quizContainer = findViewById(R.id.quiz_container);
                 quizContainer.setClickable(true);
 
+                quiz_frag = true;
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.add(R.id.quiz_container,quizFragment);
@@ -92,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements QuizFragment.Fina
                 quizFragment.setArguments(bundle);
                 RelativeLayout quizContainer = findViewById(R.id.quiz_container);
                 quizContainer.setClickable(true);
-
+                quiz_frag = true;
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.add(R.id.quiz_container,quizFragment);
@@ -107,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements QuizFragment.Fina
             public void onClick(View view) {
                 highScoreFragment = new HighScoreFragment();
                 getFragmentManager().beginTransaction().add(R.id.quiz_container,highScoreFragment).commit();
+                high_frag = true;
 
             }
         });
@@ -117,6 +121,8 @@ public class MainActivity extends AppCompatActivity implements QuizFragment.Fina
                 profileFragment = new ProfileFragment();
                 profileFragment.setProfileData(thisUser);
                 getFragmentManager().beginTransaction().add(R.id.quiz_container,profileFragment).commit();
+
+                pro_frag = true;
 
             }
         });
@@ -136,30 +142,29 @@ public class MainActivity extends AppCompatActivity implements QuizFragment.Fina
         bundle.putString("Score",String.valueOf(score));
         quizOver.setArguments(bundle);
         getFragmentManager().beginTransaction().replace(R.id.quiz_container,quizOver,null).commit();
+        quiz_frag = false;
+        over_frag = true;
     }
 
 
     public void overMainMenu(View view)
     {
         getFragmentManager().beginTransaction().remove(quizOver).commit();
+        over_frag = false;
 
     }
 
     public void back_HighScore(View view)
     {
         getFragmentManager().beginTransaction().remove(highScoreFragment).commit();
+        high_frag = false;
 
     }
-
-/*    public void SetUserProfile(UserInfo userInfo)
-    {
-        thisUser = new UserInfo(userInfo);
-    }*/
-
 
     public void profile_back(View view)
     {
         getFragmentManager().beginTransaction().remove(profileFragment).commit();
+        pro_frag = false;
 
     }
 
@@ -169,5 +174,32 @@ public class MainActivity extends AppCompatActivity implements QuizFragment.Fina
         SharedPreferences.Editor editor= sp.edit();
         editor.remove("Login").commit();
         startActivity(new Intent(MainActivity.this,LoginPage.class));
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(pro_frag)
+        {
+            getFragmentManager().beginTransaction().remove(profileFragment).commit();
+            pro_frag = false;
+        }
+        else if(quiz_frag)
+        {
+            getFragmentManager().beginTransaction().remove(quizFragment).commit();
+            quiz_frag = false;
+        }
+        else if(over_frag)
+        {
+            getFragmentManager().beginTransaction().remove(quizOver).commit();
+            over_frag = false;
+        }
+        else if(high_frag)
+        {
+            getFragmentManager().beginTransaction().remove(highScoreFragment).commit();
+            high_frag = false;
+        }
+        else {
+            super.onBackPressed();
+        }
     }
 }

@@ -30,7 +30,7 @@ public class QuizFragment extends Fragment {
 
     public interface FinalScore
     {
-        public void getFinalScore(int s);
+        void getFinalScore(int s);
     }
 
     @Override
@@ -136,6 +136,8 @@ public class QuizFragment extends Fragment {
             score+=25;
         }
     }
+
+
 
 
 
