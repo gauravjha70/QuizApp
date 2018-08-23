@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAME"
+        android:id="@+id/name"
+        android:textStyle="bold"
+        android:textColor=" #065d27 "
+        android:textSize="22sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TOP SCORES"
+        android:textSize="20dp"
+        android:textColor="#929407"
+        android:layout_below="@id/name"
+        android:id="@+id/top_scores"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="s1"
+        android:id="@+id/s1"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/top_scores"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="s2"
+        android:id="@+id/s2"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/s1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="s3"
+        android:id="@+id/s3"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/s2"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_alignParentBottom="true"
+    android:layout_margin="10dp">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Main Menu"
+        android:onClick="profile_back"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="LOGouT"
+        android:onClick="LOGOUT"/>
+
+</LinearLayout>
+
+</RelativeLayout>

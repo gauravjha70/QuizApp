@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#ffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:id="@+id/main_page_layout">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Science Quiz"
+            android:textSize="20sp"
+            android:background="@drawable/button_bg"
+            android:textColor="#ffff"
+            android:id="@+id/science_button"
+            android:layout_marginTop="80dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sports Quiz"
+            android:textSize="20sp"
+            android:background="@drawable/button_bg"
+            android:textColor="#ffff"
+            android:id="@+id/sports_button"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/science_button"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GK Quiz"
+            android:textSize="20sp"
+            android:background="@drawable/button_bg"
+            android:textColor="#ffff"
+            android:id="@+id/gk_button"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/sports_button"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="High Score"
+            android:id="@+id/highscore_button"
+            android:layout_above="@id/profile_button"
+            android:layout_alignEnd="@id/profile_button"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="User Profile"
+            android:id="@+id/profile_button"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/quiz_container">
+
+    </RelativeLayout>
+
+</FrameLayout>

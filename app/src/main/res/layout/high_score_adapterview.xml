@@ -1,0 +1,50 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:padding="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="RANK"
+        android:textSize="15sp"
+        android:textColor="#000"
+        android:id="@+id/rank_text"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="NAME"
+        android:gravity="center"
+        android:id="@+id/name_text"
+        android:textColor="#000"
+        android:layout_gravity="center"
+        android:textSize="15sp"
+        android:layout_weight="1"/>
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="SCORE"
+        android:textColor="#000"
+        android:textSize="15sp"
+        android:id="@+id/score_text"
+        android:gravity="center"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="CATEGORY"
+        android:layout_gravity="center"
+        android:textColor="#000"
+        android:gravity="center"
+        android:id="@+id/category_text"
+        android:textSize="15sp"
+        android:layout_weight="1"/>
+</LinearLayout>

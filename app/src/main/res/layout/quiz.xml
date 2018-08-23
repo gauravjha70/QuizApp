@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/quiz_bg"
+        android:layout_margin="5dp"
+        android:id="@+id/quiz_area"
+        android:padding="10dp"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question"
+            android:id="@+id/question"
+            android:textSize="20sp"
+            android:textColor="#ffff"
+            android:textStyle="bold"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/option_group"
+            android:layout_below="@id/question"
+            android:layout_marginTop="10dp"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option1"
+                android:id="@+id/option1"
+                android:textColor="#ffff"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option2"
+                android:id="@+id/option2"
+                android:textColor="#ffff"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option3"
+                android:id="@+id/option3"
+                android:textColor="#ffff"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option4"
+                android:id="@+id/option4"
+                android:textColor="#ffff"
+                />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/question_submit_button"
+        android:enabled="false"
+        android:layout_below="@id/quiz_area"
+        android:layout_alignEnd="@id/quiz_area"
+        android:textSize="15sp"/>
+
+</RelativeLayout>
