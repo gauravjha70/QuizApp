@@ -173,6 +173,8 @@ public class MainActivity extends AppCompatActivity implements QuizFragment.Fina
         sp = getSharedPreferences("key",0);
         SharedPreferences.Editor editor= sp.edit();
         editor.remove("Login").commit();
+        editor.remove("Username").commit();
+        editor.remove("Password").commit();
         startActivity(new Intent(MainActivity.this,LoginPage.class));
     }
 

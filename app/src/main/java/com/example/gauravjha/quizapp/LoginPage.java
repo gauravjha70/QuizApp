@@ -41,14 +41,6 @@ public class LoginPage extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-            else
-            {
-                String u;
-                u = sp.getString("Username","");
-                username.setText(u);
-                String p = sp.getString("Password","");
-                password.setText(p);
-            }
         }
         catch(Exception e){}
 
